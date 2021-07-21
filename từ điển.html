@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input type="text" id="language">
+
+<input type="button" value="Dịch" onclick="dich()">
+<br><br>
+<p id="translate"/>
+<script>
+    let tieng_anh = document.getElementById("language");
+    let tieng_viet = document.getElementById("language");
+    let mangTA = ["how", "old", "are", "you", "i", "am", "fine", "thanks"];
+    let mangTV = ["làm sao", "cũ", "là", "bạn", "tôi", "là", "khỏe", "cảm ơn"];
+    document.write("Chỉ có thể dịch được các từ [" + mangTA.join(" ") + "]");
+    let result = [];
+
+    function dich() {
+        let indexE = mangTA.indexOf(tieng_anh.value);
+        let indexV = mangTV.indexOf(tieng_viet.value);
+        if (indexE !== -1) {
+            result.push(mangTV[indexE]);
+            document.getElementById('translate').innerText = result.join('');
+            result = [];
+        }else if (indexV !== -1){
+            result.push(mangTA[indexV]);
+            document.getElementById('translate').innerText = result.join('');
+            result = [];
+        }
+        else {
+            document.getElementById('translate').innerText = ''
+            window.alert("hix");
+        }
+
+
+    }
+
+</script>
+</body>
+</html>
+

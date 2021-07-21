@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="renderID"></h1>
+
+<script>
+  let str = window.prompt("Nhập vào chuỗi : ");
+  const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+  let result = [];
+  for (let i=0; i<str.length; i++) {
+      if ( UPPER.indexOf(str[i]) !== -1 ) {
+          result.push(str[i].toLowerCase());
+      }else if (LOWER.indexOf(str[i]) !== -1 ) {
+          result.push(str[i].toUpperCase());
+      }
+      else {
+          result.push(str[i]);
+
+      }
+  }
+  // document.write(result.join(''));
+  let h1 = document.getElementById('renderID');
+  h1.style.color = "green";
+  h1.innerText = result.join('');
+
+</script>
+
+</body>
+</html>
